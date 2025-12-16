@@ -1,0 +1,45 @@
+# Git attributes for LaTeX projects
+# This file configures how git handles different file types
+
+# LaTeX files - treat as text, use LF line endings
+*.tex text eol=lf
+*.bib text eol=lf
+*.cls text eol=lf
+*.sty text eol=lf
+
+# Configuration files
+*.latexmkrc text eol=lf
+Makefile text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Documentation
+*.md text eol=lf
+README* text eol=lf
+LICENSE text eol=lf
+
+# Binary files
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.eps binary
+*.ps binary
+
+# Generated files (should be in .gitignore)
+*.aux binary
+*.bbl binary
+*.blg binary
+*.log binary
+*.out binary
+*.toc binary
+*.synctex.gz binary
+
+# Enable better diff for LaTeX files
+*.tex diff=tex
+*.bib diff=bib
+
+# Linguist overrides (for GitHub language detection)
+*.tex linguist-language=TeX
+sections/*.tex linguist-language=TeX

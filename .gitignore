@@ -1,6 +1,35 @@
+# macOS system files
 .DS_Store
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
-paper.synctex.gz
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.tdo
+*.nav
+*.snm
+*.vrb
+
+# LaTeX build directory
 .textmp/
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# PDF (uncomment if you don't want to track the compiled PDF)
+# *.pdf
