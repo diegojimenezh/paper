@@ -83,20 +83,6 @@ A comprehensive LaTeX template for academic papers in economics, statistics, and
 └── README.md              # This file
 ```
 
-## Compilation
-
-### Manual Compilation
-
-The standard LaTeX workflow with BibTeX:
-```bash
-pdflatex paper.tex
-bibtex paper
-pdflatex paper.tex
-pdflatex paper.tex
-```
-
-Note: You need to run `pdflatex` twice after `bibtex` to resolve all references.
-
 ## Customization Guide
 
 ### Switching Draft/Final Mode
@@ -112,21 +98,6 @@ In `preamble.tex`, add new todo commands for additional authors:
 ```latex
 \newcommand{\forC}[2]{\td[color=orange!40,inline,caption={\thetodoListItems:
     @C -- #1}]{\textbf{@C} -- #2}}
-```
-
-### Changing Paper Size or Margins
-
-Edit `preamble.tex`:
-```latex
-\geometry{letterpaper}    % or a4paper
-\geometry{margin=2.5cm}   % adjust margins
-```
-
-### Using Different Bibliography Styles
-
-In `paper.tex`, change the bibliography style:
-```latex
-\bibliographystyle{chicago}  % or aer, apa, plain, etc.
 ```
 
 ## Custom Commands
@@ -176,34 +147,7 @@ In `paper.tex`, change the bibliography style:
 - Use `\citet{}` for textual citations: Author (Year)
 - Use `\citeauthor{}` and `\citeyear{}` for author-only or year-only citations
 
-## Troubleshooting
-
-### Common Errors
-
-**"File not found" for sections/figures**
-- Check that file paths are correct and case-sensitive
-- Ensure `figures/` directory exists
-
-**Bibliography not showing**
-- Run the complete compilation sequence: `pdflatex` → `bibtex` → `pdflatex` → `pdflatex`
-- Check that `library.bib` has no syntax errors
-
-**Overfull hbox warnings**
-- The `microtype` package helps reduce these
-- Manually break long URLs or add `\sloppy` to problem paragraphs
-
-**Package conflicts**
-- Package loading order matters! See `preamble.tex` for correct order
-- `hyperref` should load before `cleveref`
-- `titlesec` should load before `hyperref`
-
-### Getting Help
-
-- Check the LaTeX Wikibook: https://en.wikibooks.org/wiki/LaTeX
-- TeX Stack Exchange: https://tex.stackexchange.com/
-- Report template issues: https://github.com/diegojavierjimenez/paper/issues
-
-## Advanced Features
+## Additional Features
 
 ### Git Integration
 
