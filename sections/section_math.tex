@@ -22,8 +22,44 @@ A topology on a set $X$ is a collection of subsets $\tau$ of $X$ satisfying the 
 \begin{enumerate}
 \item $\varnothing \in \tau$ and $X \in \tau$.
 \item Closed under finite intersections: If $U_i \in \tau$, $i=1, \ldots, n$, then $U_1 \cap \cdots \cap U_n \in \tau$.
-\item Closed under unions: If $\{U_i\}_{i \in I}$ is a collection of elements of $\tau$, then $\bigcup_{i \in I} U_i \in \tau$. 
+\item Closed under unions: If $\{U_i\}_{i \in I}$ is a collection of elements of $\tau$, then $\bigcup_{i \in I} U_i \in \tau$.
 \end{enumerate}
 \end{definition}
 
+\subsection{Numbered Equations and Cross-References}
+
+You can create numbered equations and reference them using \verb|\eqref{}|. For example, consider the quadratic formula:
+\begin{equation}
+\label{eq:quadratic}
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+
+We can refer back to \eqref{eq:quadratic} using \verb|\eqref{eq:quadratic}|. Note that \verb|\eqref{}| automatically adds parentheses around the equation number.
+
+\subsection{Multiple Equations with Alignment}
+
+Use the \texttt{align} environment for multiple aligned equations:
+\begin{align}
+\label{eq:align1}
+f(x) &= x^2 + 2x + 1 \\
+\label{eq:align2}
+&= (x+1)^2
+\end{align}
+
+You can reference individual equations: \eqref{eq:align1} and \eqref{eq:align2}.
+
+\subsection{Subequations}
+
+The \texttt{subequations} environment numbers related equations as (3a), (3b), etc.:
+\begin{subequations}
+\label{eq:system}
+\begin{align}
+\label{eq:system_a}
+\dot{x} &= Ax + Bu \\
+\label{eq:system_b}
+y &= Cx + Du
+\end{align}
+\end{subequations}
+
+Reference the entire system as \eqref{eq:system}, or individual equations as \eqref{eq:system_a} and \eqref{eq:system_b}.
 

@@ -20,6 +20,18 @@ My coauthors also like to use it to leave notes and assign tasks to each other. 
 Similarly, if instead it was B the one who needed to check something out:
 \forB{Check results}{Check this out.}
 
+\paragraph{Adding More Authors.}
+To add additional authors (\Verb"\forC", \Verb"\forD", etc.), add the following to \texttt{preamble.tex} after the existing todo command definitions:
+
+\begin{verbatim}
+\newcommand{\forC}[2]{\td[color=orange!40,inline,
+    caption={\thetodoListItems: @C -- #1}]{\textbf{@C} -- #2}}
+\newcommand{\forD}[2]{\td[color=purple!40,inline,
+    caption={\thetodoListItems: @D -- #1}]{\textbf{@D} -- #2}}
+\end{verbatim}
+
+You can choose any color you like (e.g., \texttt{red!40}, \texttt{cyan!40}, \texttt{brown!40}).
+
 \subsection{The \xx~command}
 Another command I typically use is a placeholder \Verb"\xx" as defined in the preamble. Whenever invoked, it transforms into \xx. This command is useful when writing paragraphs that require much detail. It makes it easy to come back and remove when editing. By construction, \Verb"\xx" leaves no space after itself. You can write \Verb"\xx~" if you want space.
 

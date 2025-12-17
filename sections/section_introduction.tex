@@ -16,7 +16,7 @@ The first paragraph after invoking a \Verb"\section{}" command is not indented, 
 
 \subsection {Example subsection}
 
-This is an example of a subsection. The purpose of this subsection is to use the \texttt{commands.tex} file, equations, and citations; to do so, we will use a basic math example. Consider the definition of almost sure convergence \citep{durrett2019probability}: a sequence $\left\{X_n\right\}$ converges almost surely to $X$, written $X_n \as X$, if $\P(\omega : \lim_{n \to \infty} X_n = X) = 1$.
+This is an example of a subsection. The purpose of this subsection is to use the \texttt{commands.tex} file, equations, and citations; to do so, we will use a basic math example. Consider the definition of almost sure convergence \citep{durrett2019probability}: a sequence $\left\{X_n\right\}$ converges almost surely to $X$, written $X_n \as X$, if $\Prob(\omega : \lim_{n \to \infty} X_n = X) = 1$.
 
 One way to write this is:
 \begin{verbatim}
@@ -27,12 +27,12 @@ $\mathbb{P}(\omega : \lim_{n \to \infty} X_n = X) = 1$
 
 In the \texttt{commands.tex} file, however, we define new commands:
 \begin{verbatim}
-\renewcommand{\P}{\mathbb{P}} 
+\newcommand{\Prob}{\mathbb{P}}
 \newcommand{\as}{\overset{\text{a.s.}}{\longrightarrow}}
 \end{verbatim}
 and this simplifies the syntax for the definition of almost sure convergence:
 
-\begin{verbatim} $X_n \as X$  if $\P(\omega : (\lim_{n \to \infty} X_n = X) = 1$\end{verbatim}
+\begin{verbatim} $X_n \as X$  if $\Prob(\omega : (\lim_{n \to \infty} X_n = X) = 1$\end{verbatim}
 
 Use `paragraph' to highlight the start of a new paragraph without defining a new section.
 

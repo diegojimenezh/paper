@@ -1,14 +1,33 @@
 % !TeX root = paper.tex
+%
+% PREAMBLE.TEX - LaTeX Package Configuration and Formatting Settings
+%
+% This file contains all package imports, formatting configurations, and custom
+% command definitions for the academic paper template. It is loaded by paper.tex.
+%
+% IMPORTANT: Package loading order matters! Some packages must be loaded before
+% others to avoid conflicts. The order below has been carefully arranged.
+%
+% Sections in this file:
+%   - Document Encoding
+%   - Bibliography Setup (using natbib)
+%   - Page Format and Spacing
+%   - Additional Packages
+%   - Todo Notes System
+%   - Captions and Figure/Table Settings
+%   - TikZ Graphics
+%   - Fonts and Typography (including microtype)
+%   - Colors and Theorem Environments
+%   - Section Formatting (titlesec - must load before hyperref)
+%   - Hyperref and Cross-Referencing (cleveref loads after hyperref)
+%   - Title Page Formatting
+%   - Custom Backreference System
+%   - User-Defined Commands
 
 %% DOCUMENT ENCODING ===================================================
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-
-% SILENCE WARNINGS =====================================================
-\usepackage{silence}
-\WarningFilter{biblatex}{Using fall-back BibTeX(8) backend:}
-\WarningFilter{biblatex}{'\mkdatezeros' is deprecated.}
 
 %% BIBLIOGRAPHY ========================================================
 \usepackage{csquotes}
@@ -52,7 +71,6 @@
 \usepackage{multirow}
 \usepackage{bigstrut}
 \usepackage{amssymb}
-\usepackage{color}
 \usepackage{bbm}
 \usepackage{soul}
 \usepackage{pdflscape}
@@ -131,8 +149,11 @@ caption={\protect\hypertarget{todo\thetodoListItems}{}Translation},
 \usepackage[upint]{newpxmath}
 \usepackage{bm}
 
+%% MICROTYPOGRAPHY =====================================================
+% Improves typography and reduces overfull hbox warnings
+\usepackage{microtype}
 
-\definecolor{darkred}{rgb}{0.55, 0, 0}
+%% COLORS ==============================================================
 \definecolor{ash}{RGB}{50,50,50}
 \definecolor{darkred}{rgb}{0.35, 0.0, 0.0}
 \definecolor{darkblue}{rgb}{0.0, 0.0, 0.5}
@@ -159,12 +180,20 @@ caption={\protect\hypertarget{todo\thetodoListItems}{}Translation},
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 
+% SECTION FORMATTING (must load before hyperref) ==================
+\usepackage{titlesec}
+%\titleformat{\paragraph}{\normalfont\normalsize\bfseries}{\theparagraph}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{1ex}{1em}
+%\let\oldparagraph=\paragraph
+%\renewcommand\paragraph[1]{\oldparagraph{#1.}}
+
+%\titlespacing\section{0pt}{0.5ex}{0.5ex}
+%\titlespacing\subsection{0pt}{0.5ex}{0.5ex}
+%\titlespacing\subsubsection{0pt}{0.5ex}{0.5ex}
 
 
-
-
-
-%% HYPERREF SHOULD BE LAST =============================================
+%% HYPERREF AND CROSS-REFERENCING =====================================
+% hyperref should load before cleveref
 \usepackage{hyperref}
 \hypersetup{
     pdfstartview={FitH}, % fits the width of the page to the window
@@ -177,7 +206,9 @@ caption={\protect\hypertarget{todo\thetodoListItems}{}Translation},
     urlcolor=darkred, % color of external links
 }
 
-
+% cleveref provides intelligent cross-references (must load AFTER hyperref)
+% Use \cref{} instead of \ref{} for automatic "Figure", "Table", "Section", etc.
+\usepackage[capitalize,noabbrev]{cleveref}
 
 % PACKAGE FOR TITLE PAGE =====================================
 \usepackage{titling}
@@ -271,20 +302,6 @@ caption={\protect\hypertarget{todo\thetodoListItems}{}Translation},
 
 \AtEndEnvironment{table}{\vspace{-0.5\baselineskip}}
 \AtEndEnvironment{figure}{\vspace{-0.5\baselineskip}}
-
-\usepackage{titlesec}
-%\titleformat{\paragraph}{\normalfont\normalsize\bfseries}{\theparagraph}{0pt}{}
-\titlespacing*{\paragraph}{0pt}{1ex}{1em}
-%\let\oldparagraph=\paragraph
-%\renewcommand\paragraph[1]{\oldparagraph{#1.}}
-
-%\titlespacing\section{0pt}{0.5ex}{0.5ex}
-%\titlespacing\subsection{0pt}{0.5ex}{0.5ex}
-%\titlespacing\subsubsection{0pt}{0.5ex}{0.5ex}
-
-
-% REMOVE HBOX WARNINGS
-\hfuzz=100pt
 
 
 
