@@ -205,36 +205,18 @@ Shows on which pages a figure, table, or section is referenced.
 
 **In final mode:** Hidden automatically
 
-### Smart Cross-References (cleveref package)
+### Basic Cross-References
 
-The template includes `cleveref` for intelligent cross-referencing.
-
-#### `\cref{label}`
-Automatic "Figure X", "Table Y", "Section Z" formatting.
+#### `\ref{label}`
+References figures, tables, sections, and other labeled elements.
 
 ```latex
-See \cref{fig:results} for details.  % Output: "See Figure 3 for details."
-The regression results in \cref{tab:main} show...  % Output: "...in Table 2 show..."
+See Figure \ref{fig:results} for details.
+The results in Table \ref{tab:main} show...
+As discussed in Section \ref{sec:intro}...
 ```
 
-**Compared to `\ref{}`:**
-- `\ref{fig:results}` → "3"
-- `\cref{fig:results}` → "Figure 3"
-
-#### `\Cref{label}`
-Capitalized version for sentence beginnings.
-
-```latex
-\Cref{fig:results} presents the main findings.  % Output: "Figure 3 presents..."
-```
-
-#### `\cref{label1,label2,label3}`
-Multiple references with smart formatting.
-
-```latex
-\cref{fig:a,fig:b,fig:c}  % Output: "Figures 1, 2 and 3"
-\cref{tab:1,tab:2}        % Output: "Tables 1 and 2"
-```
+**Output:** Just the number (e.g., "3", "2", "1")
 
 ### Equation References
 

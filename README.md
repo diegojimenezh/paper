@@ -11,7 +11,6 @@ A comprehensive LaTeX template for academic papers in economics, statistics, and
 - Flexible spacing options (single, 1.5x, double spacing)
 - Chicago bibliography style (easily customizable)
 - Automatic table of contents generation
-- Smart cross-referencing with `cleveref`
 - Custom appendix formatting with OA- prefixes
 
 ### Collaboration Tools
@@ -138,9 +137,8 @@ In `preamble.tex`, add new todo commands for additional authors:
 - Place `\caption{}` before `\label{}` for correct referencing
 
 ### Cross-References
-- Use `\cref{label}` for automatic "Figure X", "Table Y", "Section Z"
+- Use `\ref{label}` for referencing figures, tables, and sections
 - Use `\eqref{label}` for equation references with parentheses
-- Use `\ref{label}` for plain number references
 
 ### Bibliography
 - Use `\citep{}` for parenthetical citations: (Author, Year)

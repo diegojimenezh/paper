@@ -192,8 +192,7 @@ caption={\protect\hypertarget{todo\thetodoListItems}{}Translation},
 %\titlespacing\subsubsection{0pt}{0.5ex}{0.5ex}
 
 
-%% HYPERREF AND CROSS-REFERENCING =====================================
-% hyperref should load before cleveref
+%% HYPERREF (should load near the end) =================================
 \usepackage{hyperref}
 \hypersetup{
     pdfstartview={FitH}, % fits the width of the page to the window
@@ -205,10 +204,6 @@ caption={\protect\hypertarget{todo\thetodoListItems}{}Translation},
     filecolor=magenta, % color of file links
     urlcolor=darkred, % color of external links
 }
-
-% cleveref provides intelligent cross-references (must load AFTER hyperref)
-% Use \cref{} instead of \ref{} for automatic "Figure", "Table", "Section", etc.
-\usepackage[capitalize,noabbrev]{cleveref}
 
 % PACKAGE FOR TITLE PAGE =====================================
 \usepackage{titling}
