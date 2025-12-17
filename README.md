@@ -180,7 +180,7 @@ See the LICENSE file for details.
 ## Acknowledgments
 
 - Anne Fournier for making this template readable and user-friendly
-- Contributors and users who have provided feedback
+- Coauthors who have provided a ton of feedback (and use it in their papers!)
 
 ---
 
